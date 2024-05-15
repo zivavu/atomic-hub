@@ -1,4 +1,3 @@
-<!-- src/components/Header.svelte -->
 <script>
 	import { onMount } from 'svelte';
 
@@ -28,18 +27,10 @@
 <header class="bg-white dark:bg-gray-800 py-4">
 	<div class="container mx-auto px-4 flex justify-between items-center">
 		<a href="/" class="text-black dark:text-white text-2xl font-bold">
-			Atomowy Manifest
+			Atomowy Hub
 		</a>
 		<nav>
 			<ul class="flex space-x-4">
-				<li>
-					<a
-						href="/miasto"
-						class="text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300"
-					>
-						Poznaj więcej
-					</a>
-				</li>
 				<li>
 					<button
 						bind:this={themeToggle}

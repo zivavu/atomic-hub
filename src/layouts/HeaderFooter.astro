@@ -1,5 +1,6 @@
 ---
 // src/layouts/MainLayout.astro
+import Footer from '../components/Footer.svelte';
 import Header from '../components/Header.svelte';
 ---
 
@@ -29,5 +30,6 @@ import Header from '../components/Header.svelte';
 	<body>
 		<Header client:load />
 		<slot />
+		<Footer />
 	</body>
 </html>

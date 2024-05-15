@@ -1,4 +1,6 @@
 ---
+import HeaderFooter from './HeaderFooter.astro';
+
 interface Props {
 	title: string;
 }
@@ -17,7 +19,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<HeaderFooter>
+			<slot />
+		</HeaderFooter>
 	</body>
 </html>
 <style is:global>

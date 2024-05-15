@@ -1,14 +1,15 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.svelte';
-import Manifest from '../components/manifest.astro';
+import Button from '../components/Button.svelte';
 import RootLayout from '../layouts/RootLayout.astro';
+import Manifest from './_manifest.html';
 ---
 
 <RootLayout title="Manifest Atomowy">
-	<Header />
-
-	<Manifest />
-
-	<Footer />
+	<div
+		class="flex flex-col justify-center items-center mx-auto px-6 py-10 max-w-4xl">
+		<Manifest />
+		<Button className="mt-6" href="/artykuly" variant="secondary" size="large"
+			>Dowiedz się więcej</Button
+		>
+	</div>
 </RootLayout>
