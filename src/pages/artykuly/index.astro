@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import ArticlesFeed from '../../components/ArticlesFeed/ArticlesFeed.svelte';
 import RootLayout from '../../layouts/RootLayout.astro';
 
 const articles = await getCollection('articles');
@@ -7,19 +8,6 @@ const articles = await getCollection('articles');
 
 <RootLayout title="Atomowe artykuły">
 	<main>
-		<section>
-			<ul>
-				{
-					articles.map((article) => (
-						<li>
-							<a href={`/artykuly/${article.slug}`}>
-								<h4 class="title">{article.data.title}</h4>
-								<p class="date" />
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</section>
+		<ArticlesFeed articlesData={articles} client:load />
 	</main>
 </RootLayout>

@@ -12,37 +12,15 @@ export async function getStaticPaths() {
 }
 type Props = CollectionEntry<'articles'>;
 
-const post = Astro.props;
-const { Content } = await post.render();
+const article = Astro.props;
+
+const { Content } = await article.render();
 ---
 
-<RootLayout title={post.data.title}>
+<RootLayout title={article.data.title}>
 	<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-		<h1 class="text-4xl font-bold mb-4">{post.data.title}</h1>
-		<div class="article prose lg:prose-xl w-full">
+		<div class="prose w-full">
 			<Content />
-		</div>
-		<div>
-			{
-				post.data.stepsToTake && (
-					<div class="mt-8">
-						<h2 class="text-2xl font-bold mb-4">Kroki które możesz podjąć</h2>
-						<ul class="list-disc list-inside">
-							{post.data.stepsToTake.map((step) => (
-								<li>{step}</li>
-							))}
-						</ul>
-					</div>
-				)
-			}
 		</div>
 	</div>
 </RootLayout>
-
-<style>
-	.article {
-		p {
-			margin-bottom: 1.5rem;
-		}
-	}
-</style>

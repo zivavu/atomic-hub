@@ -1,14 +1,16 @@
 ---
-import Button from '../components/Button.svelte';
+import Button from '../components/UI/Button.svelte';
 import RootLayout from '../layouts/RootLayout.astro';
-import Manifest from './_manifest.html';
+import Manifest from './_manifest.mdx';
 ---
 
 <RootLayout title="Manifest Atomowy">
 	<div
-		class="flex flex-col justify-center items-center mx-auto px-6 py-10 max-w-4xl">
-		<Manifest />
-		<Button className="mt-6" href="/artykuly" variant="secondary" size="large"
+		class="flex flex-col justify-center items-center mx-auto px-6 py-12 max-w-4xl">
+		<div class="prose-lg">
+			<Manifest />
+		</div>
+		<Button className="mt-12" href="/artykuly" variant="secondary" size="large"
 			>Dowiedz się więcej</Button
 		>
 	</div>

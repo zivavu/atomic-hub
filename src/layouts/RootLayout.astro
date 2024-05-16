@@ -1,5 +1,6 @@
 ---
-import HeaderFooter from './HeaderFooter.astro';
+import Header from '../components/UI/Header.svelte';
+import '../styles/global.css';
 
 interface Props {
 	title: string;
@@ -9,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="pl">
+<html lang="pl" class="overflow-y-scroll">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -17,16 +18,30 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script is:inline>
+			const theme = (() => {
+				if (
+					typeof localStorage !== 'undefined' &&
+					localStorage.getItem('theme')
+				) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+			if (theme === 'light') {
+				document.documentElement.classList.remove('dark');
+			} else {
+				document.documentElement.classList.add('dark');
+			}
+			window.localStorage.setItem('theme', theme);
+		</script>
 	</head>
-	<body>
-		<HeaderFooter>
-			<slot />
-		</HeaderFooter>
+
+	<body class="min-h-svh dark:bg-slate-900">
+		<Header client:load />
+		<slot />
 	</body>
 </html>
-<style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		background-size: 224px;
-	}
-</style>
