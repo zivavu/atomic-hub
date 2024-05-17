@@ -51,7 +51,7 @@
 					</a>
 				</li>
 				<li class="relative group">
-					<button title="Dołącz do naszej społeczności na Discordzie">
+					<button disabled title="Dołącz do naszej społeczności na Discordzie">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="24"

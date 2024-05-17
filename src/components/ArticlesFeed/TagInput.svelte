@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Autocomplete from '../UI/Autocomplete.svelte';
+	import AutoComplete from '../UI/Autocomplete.svelte';
 	import { selectedTags } from './stores';
 
 	function searchArticles(searchQuery: string) {
@@ -23,10 +23,13 @@
 	}
 </script>
 
-<div class="relative mb-4 flex items-center">
-	<Autocomplete
+<div
+	class="relative mb-4 flex items-center justify-center w-full max-w-lg mx-auto"
+>
+	<AutoComplete
 		on:select={(event) => addTag(event.detail)}
 		on:search={(event) => searchArticles(event.detail)}
+		className="w-full"
 	/>
 	<button
 		on:click={clearTags}

@@ -1,7 +1,16 @@
 ---
 import Button from '../components/UI/Button.svelte';
 import RootLayout from '../layouts/RootLayout.astro';
+import { getCookie, setCookie } from '../utils/cookies';
 import Manifest from './_manifest.mdx';
+
+const cookie = getCookie(Astro.request, 'manifest_read');
+
+if (cookie) {
+	return Astro.redirect('/artykuly');
+}
+
+Astro.response.headers.set('Set-Cookie', setCookie('manifest_read', 'true'));
 ---
 
 <RootLayout title="Manifest Atomowy">
@@ -10,8 +19,8 @@ import Manifest from './_manifest.mdx';
 		<div class="prose-lg">
 			<Manifest />
 		</div>
-		<Button className="mt-12" href="/artykuly" variant="secondary" size="large"
-			>Dowiedz się więcej</Button
-		>
+		<Button className="mt-12" href="/artykuly" variant="secondary" size="large">
+			Dowiedz się więcej
+		</Button>
 	</div>
 </RootLayout>

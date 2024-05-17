@@ -20,6 +20,7 @@ const { Content } = await article.render();
 <RootLayout title={article.data.title}>
 	<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 		<div class="prose-lg w-full">
+			<h1>{article.data.title}</h1>
 			<Content />
 		</div>
 	</div>
