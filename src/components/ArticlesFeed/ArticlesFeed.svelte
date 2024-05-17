@@ -19,8 +19,10 @@
 	});
 </script>
 
-<div class="p-6">
+<div class="px-12 py-8">
 	<TagInput />
 	<SelectedTags />
-	<ArticleList />
+	<main>
+		<ArticleList />
+	</main>
 </div>
