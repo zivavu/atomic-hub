@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 
 const ICON_SIZE = 32;
+const SMALL_ICON_SIZE = 24;
 ---
 
 <header class="bg-slate-700 text-white sticky top-0 dark:bg-gray-800 py-6 z-50">
@@ -10,34 +11,57 @@ const ICON_SIZE = 32;
 		<nav>
 			<ul class="flex space-x-4 items-center">
 				<li>
-					<a href="/faq" class="text-white hover:text-gray-200">FAQ</a>
+					<a
+						href="/faq"
+						class="internal-link text-white hover:text-blue-200 flex items-center">
+						<Icon
+							name="mdi:help-circle-outline"
+							width={SMALL_ICON_SIZE}
+							height={SMALL_ICON_SIZE}
+						/>
+						FAQ
+					</a>
 				</li>
 				<li>
-					<a href="/manifest" class="text-white hover:text-gray-200">Manifest</a
-					>
+					<a
+						href="/manifest"
+						class="internal-link text-white hover:text-green-200 flex items-center">
+						<Icon
+							name="mdi:file-document-outline"
+							width={SMALL_ICON_SIZE}
+							height={SMALL_ICON_SIZE}
+						/>
+						Manifest
+					</a>
 				</li>
 				<li>
 					<a
 						href="https://github.com/zivavu/atomic-hub"
 						target="_blank"
 						rel="noopener noreferrer"
-						title="Odwiedź nasze repozytorium na GitHub">
+						title="Odwiedź nasze repozytorium na GitHub"
+						class="icon-button">
 						<Icon name="mdi:github" width={ICON_SIZE} height={ICON_SIZE} />
 					</a>
 				</li>
-				<li class="relative group">
-					<button
-						class="flex items-center content-center"
-						disabled
-						title="Dołącz do naszej społeczności na Discordzie">
-						<Icon name="mdi:discord" width={ICON_SIZE} height={ICON_SIZE} />
-					</button>
+				<li>
+					<a
+						href="#"
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Dołącz do naszej społeczności na Discordzie"
+						class="icon-button">
+						<Icon
+							name="ic:twotone-discord"
+							width={ICON_SIZE}
+							height={ICON_SIZE}
+						/>
+					</a>
 				</li>
 				<li>
 					<button
-						class="theme-toggle flex items-center content-center"
+						class="theme-toggle icon-button"
 						id="themeToggle"
-						class="theme-toggle"
 						title="Przełącz motyw">
 						<Icon
 							name="mdi:weather-night"
@@ -82,6 +106,32 @@ const ICON_SIZE = 32;
 </script>
 
 <style>
+	.internal-link,
+	.icon-button {
+		padding: 0.25rem;
+		border-radius: 0.5rem;
+		transition: background-color 0.3s ease;
+	}
+	.internal-link {
+		padding: 0.5rem 0.75rem;
+		gap: 0.25rem;
+	}
+
+	.internal-link:hover,
+	.icon-button:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+
+	.icon-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		color: inherit;
+		cursor: pointer;
+	}
+
 	.theme-toggle .light-icon {
 		display: none;
 	}
