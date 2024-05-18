@@ -2,9 +2,6 @@
 import type { InferEntrySchema } from 'astro:content';
 import { getCollection } from 'astro:content';
 import ArticleList from './ArticleList.astro';
-import SelectedTags from './SelectedTags.svelte';
-import TagInput from './TagInput.svelte';
-import { selectedTagsAtom } from './store';
 
 export type Article = {
 	slug: string;
@@ -15,26 +12,8 @@ export type Article = {
 };
 
 const articlesData = await getCollection('articles');
-const tagsSet = new Set<string>();
-
-articlesData.forEach((article) => {
-	article.data?.tags?.forEach((tag) => tagsSet.add(tag.toLowerCase()));
-});
-
-function filterArticlesByTags(articles: Article[], tags: string[]) {
-	if (tags.length === 0) return articles;
-	return articles.filter((article) => {
-		const articleTags = article.data.tags.map((tag) => tag.toLowerCase());
-		return tags.every((tag) => articleTags.includes(tag));
-	});
-}
-
-const localSelectedTags = selectedTagsAtom.get();
-const filteredArticles = filterArticlesByTags(articlesData, localSelectedTags);
 ---
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-	<TagInput articlesData={articlesData} />
-	<SelectedTags />
-	<ArticleList articles={filteredArticles} />
+<main class="max-w-7xl mx-auto px-4 sm:px-2 lg:px-8 py-8">
+	<ArticleList articles={articlesData} />
 </main>
