@@ -11,4 +11,7 @@ export default defineConfig({
 	integrations: [svelte(), tailwind(), mdx(), icon()],
 	output: 'server',
 	adapter: vercel(),
+	redirects: {
+		'/artykuly': '/',
+	},
 });

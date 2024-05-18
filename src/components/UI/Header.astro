@@ -10,6 +10,13 @@ const ICON_SIZE = 32;
 		<nav>
 			<ul class="flex space-x-4 items-center">
 				<li>
+					<a href="/faq" class="text-white hover:text-gray-200">FAQ</a>
+				</li>
+				<li>
+					<a href="/manifest" class="text-white hover:text-gray-200">Manifest</a
+					>
+				</li>
+				<li>
 					<a
 						href="https://github.com/zivavu/atomic-hub"
 						target="_blank"
@@ -19,12 +26,19 @@ const ICON_SIZE = 32;
 					</a>
 				</li>
 				<li class="relative group">
-					<button disabled title="Dołącz do naszej społeczności na Discordzie">
-						<Icon name="mdi:github" width={ICON_SIZE} height={ICON_SIZE} />
+					<button
+						class="flex items-center content-center"
+						disabled
+						title="Dołącz do naszej społeczności na Discordzie">
+						<Icon name="mdi:discord" width={ICON_SIZE} height={ICON_SIZE} />
 					</button>
 				</li>
 				<li>
-					<button id="themeToggle" class="theme-toggle" title="Przełącz motyw">
+					<button
+						class="theme-toggle flex items-center content-center"
+						id="themeToggle"
+						class="theme-toggle"
+						title="Przełącz motyw">
 						<Icon
 							name="mdi:weather-night"
 							width={ICON_SIZE}
@@ -48,14 +62,23 @@ const ICON_SIZE = 32;
 	const themeToggle = document.getElementById('themeToggle');
 	const htmlElement = document.documentElement;
 
+	// Sprawdź bieżący motyw z local storage lub ustaw domyślny
 	const currentTheme = localStorage.getItem('theme') || 'light';
-	htmlElement.classList.toggle('dark', currentTheme === 'dark');
 
-	themeToggle?.addEventListener('click', () => {
-		const newTheme = htmlElement.classList.contains('dark') ? 'light' : 'dark';
+	// Ustaw klasę 'dark' na elemencie HTML, jeśli bieżący motyw to 'dark'
+	if (currentTheme === 'dark') {
+		htmlElement.classList.add('dark');
+	}
+
+	// Funkcja do przełączania motywu
+	const toggleTheme = () => {
 		htmlElement.classList.toggle('dark');
+		const newTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
 		localStorage.setItem('theme', newTheme);
-	});
+	};
+
+	// Dodaj nasłuchiwanie na kliknięcie przycisku przełączania motywu
+	themeToggle?.addEventListener('click', toggleTheme);
 </script>
 
 <style>
