@@ -12,8 +12,14 @@ export type Article = {
 };
 
 const articlesData = await getCollection('articles');
+const sortedArticles = articlesData.sort((a, b) => {
+	return (
+		new Date(b.data.publishedAt).getTime() -
+		new Date(a.data.publishedAt).getTime()
+	);
+});
 ---
 
 <main class="max-w-7xl mx-auto px-4 sm:px-2 lg:px-8 py-8">
-	<ArticleList articles={articlesData} />
+	<ArticleList articles={sortedArticles} />
 </main>

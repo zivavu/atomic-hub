@@ -1,0 +1,78 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const ICON_SIZE = 32;
+---
+
+<header class="bg-slate-700 text-white sticky top-0 dark:bg-gray-800 py-6 z-50">
+	<div class="container mx-auto px-6 flex justify-between items-center">
+		<a href="/" class="text-2xl font-bold">Atomowy Hub</a>
+		<nav>
+			<ul class="flex space-x-4 items-center">
+				<li>
+					<a
+						href="https://github.com/zivavu/atomic-hub"
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Odwiedź nasze repozytorium na GitHub">
+						<Icon name="mdi:github" width={ICON_SIZE} height={ICON_SIZE} />
+					</a>
+				</li>
+				<li class="relative group">
+					<button disabled title="Dołącz do naszej społeczności na Discordzie">
+						<Icon name="mdi:github" width={ICON_SIZE} height={ICON_SIZE} />
+					</button>
+				</li>
+				<li>
+					<button id="themeToggle" class="theme-toggle" title="Przełącz motyw">
+						<Icon
+							name="mdi:weather-night"
+							width={ICON_SIZE}
+							height={ICON_SIZE}
+							class="dark-icon"
+						/>
+						<Icon
+							name="mdi:weather-sunny"
+							width={ICON_SIZE}
+							height={ICON_SIZE}
+							class="light-icon"
+						/>
+					</button>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<script>
+	const themeToggle = document.getElementById('themeToggle');
+	const htmlElement = document.documentElement;
+
+	const currentTheme = localStorage.getItem('theme') || 'light';
+	htmlElement.classList.toggle('dark', currentTheme === 'dark');
+
+	if (!themeToggle) return;
+	themeToggle.addEventListener('click', () => {
+		const newTheme = htmlElement.classList.contains('dark') ? 'light' : 'dark';
+		htmlElement.classList.toggle('dark');
+		localStorage.setItem('theme', newTheme);
+	});
+</script>
+
+<style>
+	.theme-toggle .light-icon {
+		display: none;
+	}
+
+	.theme-toggle .dark-icon {
+		display: block;
+	}
+
+	:global(.dark) .theme-toggle .light-icon {
+		display: block;
+	}
+
+	:global(.dark) .theme-toggle .dark-icon {
+		display: none;
+	}
+</style>
