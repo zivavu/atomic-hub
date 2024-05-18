@@ -51,8 +51,7 @@ const ICON_SIZE = 32;
 	const currentTheme = localStorage.getItem('theme') || 'light';
 	htmlElement.classList.toggle('dark', currentTheme === 'dark');
 
-	if (!themeToggle) return;
-	themeToggle.addEventListener('click', () => {
+	themeToggle?.addEventListener('click', () => {
 		const newTheme = htmlElement.classList.contains('dark') ? 'light' : 'dark';
 		htmlElement.classList.toggle('dark');
 		localStorage.setItem('theme', newTheme);

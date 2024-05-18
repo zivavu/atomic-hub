@@ -1,0 +1,25 @@
+const id = "nauka-2-0.mdx";
+						const collection = "articles";
+						const slug = "nauka-2-0";
+						const body = "\r\nNauka zawsze była siłą napędową postępu ludzkości. To dzięki niej odkrywamy tajemnice wszechświata, znajdujemy lekarstwa na choroby, tworzymy technologie, które ułatwiają nam życie. Jednak współczesna nauka stoi na rozdrożu. Z jednej strony, obserwujemy niesamowity rozwój w dziedzinach takich jak medycyna, sztuczna inteligencja czy energia odnawialna. Z drugiej strony, coraz częściej nauka staje się narzędziem w rękach korporacji, które wykorzystują ją do maksymalizacji zysków, często kosztem dobra publicznego.\r\n\r\n## Bolączki współczesnej nauki\r\n\r\n- **Komercjalizacja**: Wiele badań naukowych jest finansowanych przez firmy farmaceutyczne, technologiczne czy energetyczne, które mają swoje własne interesy. To prowadzi do sytuacji, w której wyniki badań są często ukrywane lub manipulowane, aby służyły celom komercyjnym, a nie dobru społeczeństwa.\r\n- **Publikacje naukowe za paywallem**: Większość publikacji naukowych jest dostępna tylko za opłatą, co ogranicza dostęp do wiedzy dla wielu osób, w tym studentów, naukowców z krajów rozwijających się czy po prostu ludzi ciekawych świata.\r\n- **Presja na szybkie wyniki**: Naukowcy są często pod presją, aby publikować jak najwięcej artykułów naukowych, co może prowadzić do obniżenia jakości badań i skupienia się na tematach \"modnych\", a niekoniecznie najważniejszych dla społeczeństwa.\r\n- **Brak transparentności**: Proces finansowania badań naukowych często jest nieprzejrzysty, co utrudnia kontrolę społeczną i ocenę, czy pieniądze są wydawane w sposób odpowiedzialny i etyczny.\r\n\r\n## Nauka dla ludzi, nie dla zysku: Nowa wizja\r\n\r\nWyobraźmy sobie naukę, która służy przede wszystkim ludziom, a nie korporacjom. Gdzie badania są finansowane ze środków publicznych i dostępne dla wszystkich. Gdzie naukowcy mają swobodę wyboru tematów badawczych, a wyniki ich pracy są publikowane w otwartym dostępie. Gdzie nauka jest transparentna i podlega kontroli społecznej.\r\n\r\n## Jak to osiągnąć?\r\n\r\n- **Otwarty dostęp do publikacji naukowych**: Wprowadzenie obowiązku publikowania wyników badań naukowych w otwartym dostępie, tak aby każdy mógł z nich korzystać.\r\n- **Demokratyzacja finansowania badań**: Stworzenie mechanizmów umożliwiających społeczeństwu współdecydowanie o tym, jakie badania są finansowane ze środków publicznych.\r\n- **Wspieranie niezależnych badań**: Tworzenie funduszy wspierających badania naukowe niezależne od wpływów korporacji.\r\n- **Edukacja naukowa**: Promowanie edukacji naukowej na wszystkich poziomach, aby społeczeństwo miało wiedzę i narzędzia do krytycznej oceny informacji naukowych.\r\n- **Współpraca międzynarodowa**: Współpraca między naukowcami z różnych krajów w celu rozwiązania globalnych problemów, takich jak zmiany klimatyczne, choroby zakaźne czy głód.\r\n\r\n## Twoja rola w tworzeniu nauki 2.0\r\n\r\n- **Domagaj się otwartej nauki**: Wspieraj inicjatywy na rzecz otwartego dostępu do publikacji naukowych i naciskaj na polityków, aby wprowadzili odpowiednie regulacje.\r\n- **Bądź krytyczny**: Nie wierz we wszystko, co przeczytasz w internecie. Sprawdzaj źródła informacji, szukaj niezależnych opinii, zadawaj pytania.\r\n- **Wspieraj naukę obywatelską**: Angażuj się w projekty naukowe, w których możesz wziąć udział jako wolontariusz.\r\n- **Ucz się przez całe życie**: Poszerzaj swoją wiedzę o świecie, czytaj książki popularnonaukowe, oglądaj filmy dokumentalne, uczestnicz w wykładach i warsztatach.\r\n- **Rozmawiaj o nauce**: Dziel się swoją wiedzą z innymi, dyskutuj o odkryciach naukowych, inspiruj innych do zainteresowania się nauką.\r\n\r\n## Podsumowanie\r\n\r\nNauka 2.0 to wizja nauki, która służy ludziom, a nie korporacjom. To nauka otwarta, transparentna, demokratyczna i odpowiedzialna społecznie. To nauka, która może pomóc nam rozwiązać największe problemy współczesnego świata i stworzyć lepszą przyszłość dla nas wszystkich.\r\n";
+						const data = {title:"Nauka 2.0: Wiedza dla Ludzkości, nie dla Korporacji",description:"Współczesna nauka stoi na rozdrożu między postępem a komercjalizacją. Odkryj, jak możemy przekształcić naukę, aby służyła ludziom zamiast korporacjom.",tags:["nauka","otwarty dostęp","innowacje","społeczność","rozwój"],cover:
+						new Proxy({"src":"/_astro/nauka-2-0.u1plve3X.jpg","width":896,"height":704,"format":"jpg","fsPath":"C:/Users/zivavu/Desktop/atomic-hub/src/content/articles/covers/nauka-2-0.jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "C:/Users/zivavu/Desktop/atomic-hub/src/content/articles/covers/nauka-2-0.jpg";
+							}
+							
+							return target[name];
+						}
+					})
+					,coverAlt:"Nauka 2.0",publishedAt:"2024-05-18"};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/zivavu/Desktop/atomic-hub/src/content/articles/nauka-2-0.mdx",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };
