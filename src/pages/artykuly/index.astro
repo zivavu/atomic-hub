@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import ArticlesFeed from '../../components/ArticlesFeed/ArticlesFeed.svelte';
+import ArticlesFeed from '../../components/ArticlesFeed/ArticlesFeed.astro';
 import RootLayout from '../../layouts/RootLayout.astro';
 
 const articles = await getCollection('articles');

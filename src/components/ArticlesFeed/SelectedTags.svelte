@@ -1,20 +1,14 @@
 <script lang="ts">
-	import { selectedTags } from './stores';
+	import { selectedTagsAtom, setSelectedTags } from './store';
 
 	function removeTag(tag: string) {
-		selectedTags.update((tags) => {
-			const index = tags.indexOf(tag);
-			if (index > -1) {
-				tags.splice(index, 1);
-			}
-			return [...tags];
-		});
+		setSelectedTags(selectedTagsAtom.get().filter((t) => t !== tag));
 	}
 </script>
 
 <div class="mb-4">
-	{#if $selectedTags.length > 0}
-		{#each $selectedTags as tag}
+	{#if selectedTagsAtom.get().length > 0}
+		{#each selectedTagsAtom.get() as tag}
 			<span
 				class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
 			>

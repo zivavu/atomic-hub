@@ -1,25 +1,27 @@
 <script lang="ts">
 	import AutoComplete from '../UI/Autocomplete.svelte';
-	import { selectedTags } from './stores';
+	import { setSelectedTags } from './store';
+	import type { Article } from './types/Article';
+
+	export let selectedTags: string[] = [];
+	export let articlesData: Article[];
 
 	function searchArticles(searchQuery: string) {
 		const searchQueryLower = searchQuery.toLowerCase();
-		selectedTags.update((tags) => {
-			if (tags.includes(searchQueryLower)) return tags;
-			return [...tags, searchQueryLower];
-		});
+		if (!selectedTags.includes(searchQueryLower)) {
+			setSelectedTags([...selectedTags, searchQueryLower]);
+		}
 	}
 
 	function addTag(tag: string) {
 		if (!tag) return;
-		selectedTags.update((tags) => {
-			if (tags.includes(tag.toLowerCase())) return tags;
-			return [...tags, tag.toLowerCase()];
-		});
+		if (!selectedTags.includes(tag.toLowerCase())) {
+			setSelectedTags([...selectedTags, tag.toLowerCase()]);
+		}
 	}
 
 	function clearTags() {
-		selectedTags.set([]);
+		setSelectedTags([]);
 	}
 </script>
 

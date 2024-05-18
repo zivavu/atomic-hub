@@ -6,8 +6,8 @@ const articlesCollection = defineCollection({
 			title: z.string(),
 			description: z.string(),
 			tags: z.array(z.string()),
-			cover: image().optional(),
-			coverAlt: z.string().optional(),
+			cover: image(),
+			coverAlt: z.string(),
 		}),
 });
 
