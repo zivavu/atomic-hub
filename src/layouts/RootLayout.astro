@@ -40,8 +40,29 @@ const { title } = Astro.props;
 		</script>
 	</head>
 
-	<body class="min-h-svh dark:bg-slate-900">
+	<body class="min-h-screen night-sky-gradient">
 		<Header />
 		<slot />
 	</body>
 </html>
+
+<style>
+	html {
+		transition:
+			background-color 0.5s,
+			color 0.5s;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	.night-sky-gradient {
+		background: radial-gradient(circle, #ffffff, #f9f6ff);
+	}
+
+	.dark .night-sky-gradient {
+		background: radial-gradient(circle, #000000, #000837);
+	}
+</style>

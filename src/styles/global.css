@@ -1,29 +1,5 @@
-/* Base styles */
 body {
-	color: black; /* Default text color */
-	background-color: white; /* Default background color */
-}
-
-/* Dark mode styles */
-html.dark body {
-	color: white; /* Text color for dark mode */
-	background-color: #1a202c; /* Background color for dark mode */
-}
-
-html.dark input,
-html.dark button,
-html.dark .border {
-	border-color: #4a5568; /* Darker border color */
-}
-
-html.dark .hover\:bg-gray-200:hover {
-	background-color: #4a5568; /* Hover color for buttons in dark mode */
-}
-
-html.dark .hover\:bg-gray-700:hover {
-	background-color: #2d3748; /* Hover color for buttons in dark mode */
-}
-
-html.dark p {
-	color: #edf2f7; /* Paragraph text color for dark mode */
+	color: black;
+	background-color: white;
+	line-height: 1.6;
 }

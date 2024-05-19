@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ArticlesFeed from '../components/ArticlesFeed/ArticlesFeed.astro';
+import StarsBackground from '../components/UI/StarsBackground.svelte';
 import RootLayout from '../layouts/RootLayout.astro';
 
 const articles = await getCollection('articles');
@@ -8,4 +9,6 @@ const articles = await getCollection('articles');
 
 <RootLayout title="Atomowe artykuły">
 	<ArticlesFeed articlesData={articles} />
+
+	<StarsBackground client:only="svelte" />
 </RootLayout>
