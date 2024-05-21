@@ -3,3 +3,145 @@ body {
 	background-color: white;
 	line-height: 1.6;
 }
+
+/* Stylizacja base i dark mode dla klasy prose */
+.prose {
+	color: black; /* Kolor tekstu */
+	max-width: none; /* Max szerokość */
+}
+
+html.dark .prose {
+	color: #f0f0f0; /* Kolor tekstu w trybie ciemnym */
+}
+
+/* Stylizacja linków w prose */
+.prose a {
+	color: #1a0dab;
+	text-decoration: none;
+}
+
+html.dark .prose a {
+	color: #8ab4f8;
+}
+
+.prose a:hover {
+	text-decoration: underline;
+}
+
+/* Stylizacja nagłówków w prose */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+	color: #333;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+	line-height: 1.25;
+}
+
+.prose h1 {
+	font-size: 2.5rem;
+	margin-top: 2rem;
+}
+
+.prose h2 {
+	font-size: 2rem;
+}
+
+.prose h3 {
+	font-size: 1.75rem;
+}
+
+.prose h4 {
+	font-size: 1.5rem;
+}
+
+.prose h5 {
+	font-size: 1.25rem;
+}
+
+.prose h6 {
+	font-size: 1rem;
+}
+
+html.dark .prose h1,
+html.dark .prose h2,
+html.dark .prose h3,
+html.dark .prose h4,
+html.dark .prose h5,
+html.dark .prose h6 {
+	color: #ffffff;
+}
+
+/* Stylizacja list w prose */
+.prose ul,
+.prose ol {
+	margin: 1.5rem 0;
+	padding-left: 1.5rem;
+	color: #333;
+}
+
+html.dark .prose ul,
+html.dark .prose ol {
+	color: #cccccc;
+}
+
+/* Stylizacja dla strong w prose */
+.prose strong {
+	color: black;
+	font-weight: bold;
+}
+
+html.dark .prose strong {
+	color: #ffffff;
+}
+
+/* Stylizacja blockquote w prose */
+.prose blockquote {
+	border-left: 4px solid #ccc;
+	padding-left: 1rem;
+	margin-left: 0;
+	color: #777;
+}
+
+/* Stylizacja paragrafów w prose */
+.prose p {
+	margin-bottom: 1rem;
+}
+
+html.dark .prose p a {
+	color: #8ab4f8;
+}
+
+@media (max-width: 768px) {
+	.prose {
+		font-size: 16px;
+		padding: 0.5rem;
+	}
+
+	.prose h1 {
+		font-size: 2rem;
+	}
+
+	.prose h2 {
+		font-size: 1.75rem;
+	}
+
+	.prose h3 {
+		font-size: 1.5rem;
+	}
+
+	.prose h4 {
+		font-size: 1.25rem;
+	}
+
+	.prose h5 {
+		font-size: 1rem;
+	}
+
+	.prose h6 {
+		font-size: 0.875rem;
+	}
+}
