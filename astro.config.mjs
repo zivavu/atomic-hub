@@ -10,7 +10,9 @@ import icon from 'astro-icon';
 export default defineConfig({
 	integrations: [svelte(), tailwind(), mdx(), icon()],
 	output: 'server',
-	adapter: vercel(),
+	adapter: vercel({
+		webAnalytics: { enabled: true },
+	}),
 	redirects: {
 		'/artykuly': '/',
 	},
